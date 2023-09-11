@@ -104,6 +104,9 @@ print(Settings().model_dump())
 
     Check the [Environment variable names documentation](#environment-variable-names) for more information.
 
+> [!NOTE]
+> When using sub models, they should inherit from `pydantic.BaseModel` to prevent they from loading env directly and from working as the main BaseSettings model. Using BaseSettings classes as sub classes can lead to unexpected behaviour
+
 ## Environment variable names
 
 By default, the environment variable name is the same as the field name.
